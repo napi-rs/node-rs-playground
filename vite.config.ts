@@ -24,5 +24,6 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    outDir: '.vercel/output/static',
   },
 })
