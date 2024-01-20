@@ -1,37 +1,27 @@
-import { useState } from 'react'
+import Argon2 from './argon2';
+import Bcrypt from './bcrypt';
+import Xxhash from './xxhash';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 
-import Argon2 from './argon2'
-import Bcrypt from './bcrypt'
-import Xxhash from './xxhash'
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from './components/ui/navigation-menu'
-
-enum Package {
-  Argon2 = '@node-rs/argon2',
-  Bcrypt = '@node-rs/bcrypt',
-  Jieba = '@node-rs/jieba',
-  Xxhash = '@node-rs/xxhash',
-}
+const pkgList = [
+  {
+    name: '@node-rs/argon2',
+    component: Argon2,
+  },
+  {
+    name: '@node-rs/bcrypt',
+    component: Bcrypt,
+  },
+  {
+    name: '@node-rs/jieba',
+  },
+  {
+    name: '@node-rs/xxhash',
+    component: Xxhash,
+  },
+];
 
 export default function Component() {
-  const [pkg, setPackage] = useState<Package>(Package.Argon2)
-  let SubComponent = Argon2
-  switch (pkg) {
-    case Package.Argon2:
-      SubComponent = Argon2
-      break
-    case Package.Bcrypt:
-      SubComponent = Bcrypt
-      break
-    case Package.Xxhash:
-      SubComponent = Xxhash
-      break
-  }
   return (
     <div className="tw-mx-auto tw-max-w-2xl">
       <header className="tw-text-center tw-py-8">
@@ -43,56 +33,25 @@ export default function Component() {
           <code>@node-rs/jieba</code> and <code>@node-rs/xxhash</code> packages
         </p>
       </header>
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={`${navigationMenuTriggerStyle()} tw-cursor-pointer`}
-              onSelect={() => {
-                setPackage(Package.Argon2)
-              }}
-              active={pkg === Package.Argon2}
+      {/* fixme: using two .map() calls due to the way this component behaves */}
+      <Tabs defaultValue={pkgList[0].name}>
+        <TabsList>
+          {pkgList.map((item) => (
+            <TabsTrigger
+              value={item.name}
+              key={item.name}
+              disabled={!item.component}
             >
-              <code>@node-rs/argon2</code>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              className={`${navigationMenuTriggerStyle()} tw-cursor-pointer`}
-              onSelect={() => {
-                setPackage(Package.Bcrypt)
-              }}
-              active={pkg === Package.Bcrypt}
-            >
-              <code>@node-rs/bcrypt</code>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem
-            className="tw-cursor-not-allowed"
-            value={Package.Jieba}
-          >
-            <NavigationMenuLink
-              className={`${navigationMenuTriggerStyle()}`}
-              active={pkg === Package.Jieba}
-            >
-              <code>@node-rs/jieba</code>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem value={Package.Xxhash}>
-            <NavigationMenuLink
-              className={`${navigationMenuTriggerStyle()} tw-cursor-pointer`}
-              onSelect={() => {
-                setPackage(Package.Xxhash)
-              }}
-              active={pkg === Package.Xxhash}
-            >
-              <code>@node-rs/xxhash</code>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-      <div className="tw-container tw-h-10"></div>
-      <SubComponent />
+              {item.name}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        {pkgList.map((item) => (
+          <TabsContent value={item.name} key={`${item.name}-component`}>
+            {item.component != null && <item.component />}
+          </TabsContent>
+        ))}
+      </Tabs>
     </div>
-  )
+  );
 }

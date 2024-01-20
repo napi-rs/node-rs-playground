@@ -1,5 +1,5 @@
-import { hash, Algorithm, verify } from '@node-rs/argon2'
-import { useCallback, useState } from 'react'
+import { hash, Algorithm, verify } from '@node-rs/argon2';
+import { useCallback, useState } from 'react';
 
 import {
   CardTitle,
@@ -7,62 +7,62 @@ import {
   CardHeader,
   CardContent,
   Card,
-} from './components/ui/card'
-import { Label } from './components/ui/label'
-import { Input } from './components/ui/input'
-import { Button } from './components/ui/button'
-import { Menubar, MenubarMenu, MenubarTrigger } from './components/ui/menubar'
-import { useToast } from './components/ui/use-toast'
-import { Loader2 } from 'lucide-react'
+} from './components/ui/card';
+import { Label } from './components/ui/label';
+import { Input } from './components/ui/input';
+import { Button } from './components/ui/button';
+import { Menubar, MenubarMenu, MenubarTrigger } from './components/ui/menubar';
+import { useToast } from './components/ui/use-toast';
+import { Loader2 } from 'lucide-react';
 
-const DEFAULT_TIME_COST = 3
-const DEFAULT_PARALLELISM = 1
+const DEFAULT_TIME_COST = 3;
+const DEFAULT_PARALLELISM = 1;
 
 export default function Component() {
-  const [password, setPassword] = useState('')
-  const [duration, setDuration] = useState(0)
-  const [timeCost, setTimeCost] = useState(DEFAULT_TIME_COST)
-  const [parallelism, setParallelism] = useState(DEFAULT_PARALLELISM)
-  const [algorithm, setAlgorithm] = useState(Algorithm.Argon2id)
-  const [hashed, setHash] = useState('')
-  const [inputHash, setInputHash] = useState('')
-  const [inputPassword, setInputPassword] = useState('')
-  const [loading, setLoading] = useState(false)
-  const { toast } = useToast()
+  const [password, setPassword] = useState('');
+  const [duration, setDuration] = useState(0);
+  const [timeCost, setTimeCost] = useState(DEFAULT_TIME_COST);
+  const [parallelism, setParallelism] = useState(DEFAULT_PARALLELISM);
+  const [algorithm, setAlgorithm] = useState(Algorithm.Argon2id);
+  const [hashed, setHash] = useState('');
+  const [inputHash, setInputHash] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
   const onChangePassword = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setPassword(event.target.value)
+      setPassword(event.target.value);
     },
     []
-  )
+  );
   const onChangeTimeCost = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setTimeCost(Number(event.target.value))
+      setTimeCost(Number(event.target.value));
     },
     []
-  )
+  );
   const onChangeParallelism = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setParallelism(Number(event.target.value))
+      setParallelism(Number(event.target.value));
     },
     []
-  )
+  );
   const onChangeAlgorithm = useCallback((ev: string) => {
-    setAlgorithm(Number(ev))
-  }, [])
+    setAlgorithm(Number(ev));
+  }, []);
   const onGenerateHash = useCallback(() => {
-    const timeStart = Date.now()
-    setLoading(true)
+    const timeStart = Date.now();
+    setLoading(true);
     hash(password, {
       timeCost,
       parallelism,
       algorithm,
     }).then((res) => {
-      setHash(res)
-      setDuration(Date.now() - timeStart)
-      setLoading(false)
-    })
-  }, [password, timeCost, parallelism, algorithm])
+      setHash(res);
+      setDuration(Date.now() - timeStart);
+      setLoading(false);
+    });
+  }, [password, timeCost, parallelism, algorithm]);
 
   const onCopyHash = useCallback(() => {
     navigator.clipboard
@@ -71,24 +71,24 @@ export default function Component() {
         toast({
           title: 'Copied',
           description: 'Hash copied to clipboard',
-        })
+        });
       })
       .catch((e) => {
-        console.error(e)
-      })
-  }, [hashed, toast])
+        console.error(e);
+      });
+  }, [hashed, toast]);
   const onChangeHash = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setInputHash(event.target.value)
+      setInputHash(event.target.value);
     },
     []
-  )
+  );
   const onChangeInputPassword = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setInputPassword(event.target.value)
+      setInputPassword(event.target.value);
     },
     []
-  )
+  );
   const onVerifyHash = useCallback(() => {
     verify(inputHash, inputPassword)
       .then((res) => {
@@ -97,13 +97,13 @@ export default function Component() {
             // @ts-expect-error type mismatch
             title: <span className="tw-text-lime-200">Verified</span>,
             description: 'Hash verified',
-          })
+          });
         } else {
           toast({
             // @ts-expect-error type mismatch
             title: <span className="tw-text-yellow-200">Not verified</span>,
             description: 'Hash not verified',
-          })
+          });
         }
       })
       .catch((err) => {
@@ -111,12 +111,12 @@ export default function Component() {
           // @ts-expect-error type mismatch
           title: <span className="tw-text-red-600">Error</span>,
           description: <span className="tw-font-mono">{err.message}</span>,
-        })
-      })
-  }, [inputHash, inputPassword, toast])
+        });
+      });
+  }, [inputHash, inputPassword, toast]);
 
   return (
-    <>
+    <div className="tw-space-y-4">
       <Card>
         <CardHeader className="tw-space-y-1">
           <CardTitle className="tw-text-2xl tw-font-bold">
@@ -185,7 +185,7 @@ export default function Component() {
               <p className="tw-font-mono tw-subpixel-antialiased tw-text-indigo-300 tw-break-words ">
                 {hashed}{' '}
                 {hashed.trim().length ? (
-                  <Button className="tw-text-red-200" onClick={onCopyHash}>
+                  <Button variant="outline" onClick={onCopyHash} size="sm">
                     Copy
                   </Button>
                 ) : null}
@@ -210,27 +210,31 @@ export default function Component() {
         <CardContent>
           <div className="tw-space-y-4">
             <div className="tw-space-y-2">
-              <Label htmlFor="input-password">Password to verify</Label>
-              <Input
-                id="input-password"
-                placeholder="Enter password to verify"
-                required
-                type="text"
-                onChange={onChangeInputPassword}
-              />
-              <Label htmlFor="hash">Password hash</Label>
-              <Input
-                id="hash"
-                placeholder="Enter hash"
-                required
-                type="text"
-                onChange={onChangeHash}
-              />
+              <div>
+                <Label htmlFor="input-password">Password to verify</Label>
+                <Input
+                  id="input-password"
+                  placeholder="Enter password to verify"
+                  required
+                  type="text"
+                  onChange={onChangeInputPassword}
+                />
+              </div>
+              <div>
+                <Label htmlFor="hash">Password hash</Label>
+                <Input
+                  id="hash"
+                  placeholder="Enter hash"
+                  required
+                  type="text"
+                  onChange={onChangeHash}
+                />
+              </div>
             </div>
           </div>
           <Button
             disabled={!inputHash || !inputPassword}
-            className="tw-w-full"
+            className="tw-w-full tw-mt-4"
             onClick={onVerifyHash}
             variant="outline"
           >
@@ -238,6 +242,6 @@ export default function Component() {
           </Button>
         </CardContent>
       </Card>
-    </>
-  )
+    </div>
+  );
 }

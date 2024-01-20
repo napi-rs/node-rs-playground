@@ -1,6 +1,6 @@
-import { hash, DEFAULT_COST, verify } from '@node-rs/bcrypt'
-import { useCallback, useState } from 'react'
-import { Loader2 } from 'lucide-react'
+import { hash, DEFAULT_COST, verify } from '@node-rs/bcrypt';
+import { useCallback, useState } from 'react';
+import { Loader2 } from 'lucide-react';
 
 import {
   CardTitle,
@@ -8,42 +8,42 @@ import {
   CardHeader,
   CardContent,
   Card,
-} from './components/ui/card'
-import { Label } from './components/ui/label'
-import { Input } from './components/ui/input'
-import { Button } from './components/ui/button'
-import { useToast } from './components/ui/use-toast'
+} from './components/ui/card';
+import { Label } from './components/ui/label';
+import { Input } from './components/ui/input';
+import { Button } from './components/ui/button';
+import { useToast } from './components/ui/use-toast';
 
 export default function Component() {
-  const [password, setPassword] = useState('')
-  const [duration, setDuration] = useState(0)
-  const [loading, setLoading] = useState(false)
-  const [cost, setCost] = useState(DEFAULT_COST)
-  const [hashed, setHash] = useState('')
-  const [inputHash, setInputHash] = useState('')
-  const [inputPassword, setInputPassword] = useState('')
-  const { toast } = useToast()
+  const [password, setPassword] = useState('');
+  const [duration, setDuration] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [cost, setCost] = useState(DEFAULT_COST);
+  const [hashed, setHash] = useState('');
+  const [inputHash, setInputHash] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+  const { toast } = useToast();
   const onChangePassword = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setPassword(event.target.value)
+      setPassword(event.target.value);
     },
     []
-  )
+  );
   const onChangeCost = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setCost(Number(event.target.value))
+      setCost(Number(event.target.value));
     },
     []
-  )
+  );
   const onGenerateHash = useCallback(() => {
-    setLoading(true)
-    const timeStart = Date.now()
+    setLoading(true);
+    const timeStart = Date.now();
     hash(password, cost).then((res) => {
-      setHash(res)
-      setDuration(Date.now() - timeStart)
-      setLoading(false)
-    })
-  }, [password, cost])
+      setHash(res);
+      setDuration(Date.now() - timeStart);
+      setLoading(false);
+    });
+  }, [password, cost]);
 
   const onCopyHash = useCallback(() => {
     navigator.clipboard
@@ -52,25 +52,25 @@ export default function Component() {
         toast({
           title: 'Copied',
           description: 'Hash copied to clipboard',
-        })
+        });
       })
       .catch((e) => {
-        console.error(e)
-      })
-  }, [hashed, toast])
+        console.error(e);
+      });
+  }, [hashed, toast]);
 
   const onChangeHash = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setInputHash(event.target.value)
+      setInputHash(event.target.value);
     },
     []
-  )
+  );
   const onChangeInputPassword = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      setInputPassword(event.target.value)
+      setInputPassword(event.target.value);
     },
     []
-  )
+  );
   const onVerifyHash = useCallback(() => {
     verify(inputPassword, inputHash)
       .then((res) => {
@@ -79,13 +79,13 @@ export default function Component() {
             // @ts-expect-error type mismatch
             title: <span className="tw-text-lime-200">Verified</span>,
             description: 'Hash verified',
-          })
+          });
         } else {
           toast({
             // @ts-expect-error type mismatch
             title: <span className="tw-text-yellow-200">Not verified</span>,
             description: 'Hash not verified',
-          })
+          });
         }
       })
       .catch((err) => {
@@ -93,12 +93,12 @@ export default function Component() {
           // @ts-expect-error type mismatch
           title: <span className="tw-text-red-600">Error</span>,
           description: <span className="tw-font-mono">{err.message}</span>,
-        })
-      })
-  }, [inputHash, inputPassword, toast])
+        });
+      });
+  }, [inputHash, inputPassword, toast]);
 
   return (
-    <>
+    <div className="tw-space-y-4">
       <Card>
         <CardHeader className="tw-space-y-1">
           <CardTitle className="tw-text-2xl tw-font-bold">
@@ -111,23 +111,27 @@ export default function Component() {
         <CardContent>
           <div className="tw-space-y-4">
             <div className="tw-space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                placeholder="Enter password"
-                required
-                type="text"
-                onChange={onChangePassword}
-              />
-              <Label htmlFor="cost">Cost</Label>
-              <Input
-                id="cost"
-                type="number"
-                defaultValue={DEFAULT_COST}
-                min={4}
-                max={31}
-                onChange={onChangeCost}
-              />
+              <div>
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  id="password"
+                  placeholder="Enter password"
+                  required
+                  type="text"
+                  onChange={onChangePassword}
+                />
+              </div>
+              <div>
+                <Label htmlFor="cost">Cost</Label>
+                <Input
+                  id="cost"
+                  type="number"
+                  defaultValue={DEFAULT_COST}
+                  min={4}
+                  max={31}
+                  onChange={onChangeCost}
+                />
+              </div>
             </div>
             <Button
               disabled={!password || loading}
@@ -137,18 +141,15 @@ export default function Component() {
             >
               Generate Hash
             </Button>
-            <div className="tw-space-y-2 tw-container tw-flex tw-justify-center tw-flex-row tw-flex-wrap">
+            <div className="tw-space-y-2 ">
               <p className="tw-font-mono tw-subpixel-antialiased tw-text-indigo-300 tw-break-words ">
                 {hashed}{' '}
+                {hashed.trim().length ? (
+                  <Button variant="outline" onClick={onCopyHash} size="sm">
+                    Copy
+                  </Button>
+                ) : null}
               </p>
-              {hashed.trim().length ? (
-                <Button
-                  className="tw-text-red-200 tw-w-9/12"
-                  onClick={onCopyHash}
-                >
-                  Copy
-                </Button>
-              ) : null}
               <p className="tw-font-mono tw-subpixel-antialiased tw-break-words tw-text-lime-400">
                 duration: <code>{duration} ms</code>
               </p>
@@ -169,27 +170,31 @@ export default function Component() {
         <CardContent>
           <div className="tw-space-y-4">
             <div className="tw-space-y-2">
-              <Label htmlFor="input-password">Password to verify</Label>
-              <Input
-                id="input-password"
-                placeholder="Enter password to verify"
-                required
-                type="text"
-                onChange={onChangeInputPassword}
-              />
-              <Label htmlFor="hash">Password hash</Label>
-              <Input
-                id="hash"
-                placeholder="Enter hash"
-                required
-                type="text"
-                onChange={onChangeHash}
-              />
+              <div>
+                <Label htmlFor="input-password">Password to verify</Label>
+                <Input
+                  id="input-password"
+                  placeholder="Enter password to verify"
+                  required
+                  type="text"
+                  onChange={onChangeInputPassword}
+                />
+              </div>
+              <div>
+                <Label htmlFor="hash">Password hash</Label>
+                <Input
+                  id="hash"
+                  placeholder="Enter hash"
+                  required
+                  type="text"
+                  onChange={onChangeHash}
+                />
+              </div>
             </div>
           </div>
           <Button
             disabled={!inputHash || !inputPassword}
-            className="tw-w-full"
+            className="tw-w-full tw-mt-4"
             onClick={onVerifyHash}
             variant="outline"
           >
@@ -197,6 +202,6 @@ export default function Component() {
           </Button>
         </CardContent>
       </Card>
-    </>
-  )
+    </div>
+  );
 }
