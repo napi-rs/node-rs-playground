@@ -1,4 +1,4 @@
-import { xxh32, xxh64, xxh3 } from '@node-rs/xxhash'
+import { xxh32, xxh64, xxh3 } from '@node-rs/xxhash';
 
 import {
   CardTitle,
@@ -6,11 +6,11 @@ import {
   CardHeader,
   CardContent,
   Card,
-} from './components/ui/card'
-import { Label } from './components/ui/label'
-import { Textarea } from './components/ui/textarea'
-import { Button } from './components/ui/button'
-import { ChangeEvent, useCallback, useState } from 'react'
+} from './components/ui/card';
+import { Label } from './components/ui/label';
+import { Textarea } from './components/ui/textarea';
+import { Button } from './components/ui/button';
+import { ChangeEvent, useCallback, useState } from 'react';
 import {
   Select,
   SelectContent,
@@ -19,7 +19,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from './components/ui/select'
+} from './components/ui/select';
 
 enum Algorithm {
   Xxhash32 = 'xxhash32',
@@ -30,32 +30,32 @@ enum Algorithm {
 }
 
 export default function Component() {
-  const [input, setInput] = useState('')
-  const [hash, setHash] = useState<number | bigint>(0)
-  const [algorithm, setAlgorithm] = useState(Algorithm.Xxhash32)
+  const [input, setInput] = useState('');
+  const [hash, setHash] = useState<number | bigint>(0);
+  const [algorithm, setAlgorithm] = useState(Algorithm.Xxhash32);
   const onInput = useCallback((evt: ChangeEvent<HTMLTextAreaElement>) => {
-    setInput(evt.target.value)
-  }, [])
+    setInput(evt.target.value);
+  }, []);
   const onHash = useCallback(() => {
     switch (algorithm) {
       case Algorithm.Xxhash32:
-        setHash(xxh32(input))
-        break
+        setHash(xxh32(input));
+        break;
       case Algorithm.Xxhash64:
-        setHash(xxh64(input))
-        break
+        setHash(xxh64(input));
+        break;
       case Algorithm.Xxh3:
-        setHash(xxh3.Xxh3.withSeed().update(input).digest())
-        break
+        setHash(xxh3.Xxh3.withSeed().update(input).digest());
+        break;
       case Algorithm.Xx3Xxh64:
-        setHash(xxh3.xxh64(input))
-        break
+        setHash(xxh3.xxh64(input));
+        break;
       case Algorithm.Xx3Xxh128:
-        setHash(xxh3.xxh128(input))
-        break
+        setHash(xxh3.xxh128(input));
+        break;
     }
-    setHash(xxh32(input))
-  }, [input, algorithm])
+    setHash(xxh32(input));
+  }, [input, algorithm]);
   return (
     <Card className="tw-mt-4">
       <CardHeader className="tw-space-y-1">
@@ -110,5 +110,5 @@ export default function Component() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
