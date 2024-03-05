@@ -1,7 +1,8 @@
-import Argon2 from './argon2';
-import Bcrypt from './bcrypt';
-import Xxhash from './xxhash';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
+import Argon2 from './argon2'
+import Bcrypt from './bcrypt'
+import Xxhash from './xxhash'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs'
+import { JsonWebToken } from './jwt'
 
 const pkgList = [
   {
@@ -13,13 +14,14 @@ const pkgList = [
     component: Bcrypt,
   },
   {
-    name: '@node-rs/jieba',
-  },
-  {
     name: '@node-rs/xxhash',
     component: Xxhash,
   },
-];
+  {
+    name: '@node-rs/jsonwebtoken',
+    component: JsonWebToken,
+  },
+]
 
 export default function Component() {
   return (
@@ -53,5 +55,5 @@ export default function Component() {
         ))}
       </Tabs>
     </div>
-  );
+  )
 }
