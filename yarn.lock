@@ -3336,7 +3336,7 @@ __metadata:
       optional: true
   bin:
     esbuild: bin/esbuild
-  checksum: 66398f9fb2c65e456a3e649747b39af8a001e47963b25e86d9c09d2a48d61aa641b27da0ce5cad63df95ad246105e1d83e7fee0e1e22a0663def73b1c5101112
+  checksum: 10c0/66398f9fb2c65e456a3e649747b39af8a001e47963b25e86d9c09d2a48d61aa641b27da0ce5cad63df95ad246105e1d83e7fee0e1e22a0663def73b1c5101112
   languageName: node
   linkType: hard
 
@@ -4126,12 +4126,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.311.0":
-  version: 0.311.0
-  resolution: "lucide-react@npm:0.311.0"
+"lucide-react@npm:^0.371.0":
+  version: 0.371.0
+  resolution: "lucide-react@npm:0.371.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/64b21c93e2d36c9fae7c2e360bd697dc5c2e33e469cf3e3425414e3a0b3e2d9292c7526a1cf78daa0ff25bae03fbc9f65b5d1243a9ba14cbad156bd0755afe83
+  checksum: 10c0/52852aa721091a4483587ccebb264139b938afab496750499d50311a50efddd9acfb33a265c4075e82f04b02167e5a2644ee4ce6ef44c78249b475bc26c3ee6e
   languageName: node
   linkType: hard
 
@@ -4339,7 +4339,7 @@ __metadata:
     eslint: "npm:^8.56.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.5"
-    lucide-react: "npm:^0.311.0"
+    lucide-react: "npm:^0.371.0"
     postcss: "npm:^8.4.33"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
