@@ -27,7 +27,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@napi-rs/wasm-runtime": "^0.1.1",
+    "@napi-rs/wasm-runtime": "^0.2.0",
     "@node-rs/argon2": "^1.7.2",
     "@node-rs/bcrypt": "^1.9.2",
     "@node-rs/crc32": "^1.9.2",
