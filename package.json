@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@napi-rs/wasm-runtime": "^0.2.3",
-    "@node-rs/argon2": "^1.8.3",
+    "@node-rs/argon2": "^2.0.0",
     "@node-rs/bcrypt": "^1.10.4",
     "@node-rs/crc32": "^1.10.3",
     "@node-rs/jieba": "^1.10.3",
