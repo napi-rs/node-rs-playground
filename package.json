@@ -27,7 +27,7 @@
     "clsx": "^2.1.1",
     "codemirror": "^6.0.1",
     "highlight.js": "^11.9.0",
-    "lucide-react": "^0.461.0",
+    "lucide-react": "^0.462.0",
     "nanoid": "^5.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
