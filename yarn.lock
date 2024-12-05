@@ -3593,12 +3593,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.465.0":
-  version: 0.465.0
-  resolution: "lucide-react@npm:0.465.0"
+"lucide-react@npm:^0.466.0":
+  version: 0.466.0
+  resolution: "lucide-react@npm:0.466.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
-  checksum: 10c0/2b2deb458927793b415f874fa3e0ca3a896e2bdab8e5900dfb37bc0d57e8f30562ad20339f21ec2e9598ccd05f2ee2ca62f015fc0af08139cf06b02c9a08f3ad
+  checksum: 10c0/75fa1c85fc12d506986fc5129d05cf45ece211dbeda80405469f57d54c282b1ddf361eda6b949047945759a8b1e4df59a2c4f9097aeea69ca7ad575f98731548
   languageName: node
   linkType: hard
 
@@ -3811,7 +3811,7 @@ __metadata:
     codemirror: "npm:^6.0.1"
     esbuild: "npm:^0.24.0"
     highlight.js: "npm:^11.9.0"
-    lucide-react: "npm:^0.465.0"
+    lucide-react: "npm:^0.466.0"
     nanoid: "npm:^5.0.7"
     oxlint: "npm:^0.14.0"
     postcss: "npm:^8.4.38"
