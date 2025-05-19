@@ -1,3 +1,5 @@
+import { lzma } from '@napi-rs/lzma'
+
 import Argon2 from './argon2'
 import Bcrypt from './bcrypt'
 import Xxhash from './xxhash'
@@ -22,6 +24,8 @@ const pkgList = [
     component: JsonWebToken,
   },
 ]
+
+console.log(lzma.compressSync('Hello, world!'))
 
 export default function Component() {
   return (
