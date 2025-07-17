@@ -710,7 +710,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/wasm-runtime@npm:^0.2.3, @napi-rs/wasm-runtime@npm:^0.2.5":
+"@napi-rs/wasm-runtime@npm:^0.2.5":
   version: 0.2.12
   resolution: "@napi-rs/wasm-runtime@npm:0.2.12"
   dependencies:
@@ -718,6 +718,17 @@ __metadata:
     "@emnapi/runtime": "npm:^1.4.3"
     "@tybys/wasm-util": "npm:^0.10.0"
   checksum: 10c0/6d07922c0613aab30c6a497f4df297ca7c54e5b480e00035e0209b872d5c6aab7162fc49477267556109c2c7ed1eb9c65a174e27e9b87568106a87b0a6e3ca7d
+  languageName: node
+  linkType: hard
+
+"@napi-rs/wasm-runtime@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@napi-rs/wasm-runtime@npm:1.0.0"
+  dependencies:
+    "@emnapi/core": "npm:^1.4.3"
+    "@emnapi/runtime": "npm:^1.4.3"
+    "@tybys/wasm-util": "npm:^0.10.0"
+  checksum: 10c0/03622a7971d784b4d5674ded4496e6e2c37f7033d86efd8f8fc21ce78a95acbced7663ed94d79444b791028e28d894068769b769173a5d9272cff0e6ef21dd50
   languageName: node
   linkType: hard
 
@@ -3759,7 +3770,7 @@ __metadata:
     "@codemirror/lang-javascript": "npm:^6.2.2"
     "@codemirror/lang-json": "npm:^6.0.1"
     "@codemirror/view": "npm:^6.26.3"
-    "@napi-rs/wasm-runtime": "npm:^0.2.3"
+    "@napi-rs/wasm-runtime": "npm:^1.0.0"
     "@node-rs/argon2": "npm:^2.0.0"
     "@node-rs/bcrypt": "npm:^1.10.4"
     "@node-rs/crc32": "npm:^1.10.3"
