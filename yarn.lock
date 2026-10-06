@@ -1060,124 +1060,114 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-android-arm-eabi@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-android-arm-eabi@npm:1.10.7"
+"@node-rs/bcrypt-android-arm-eabi@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-android-arm-eabi@npm:2.0.0"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-android-arm64@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-android-arm64@npm:1.10.7"
+"@node-rs/bcrypt-android-arm64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-android-arm64@npm:2.0.0"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-darwin-arm64@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-darwin-arm64@npm:1.10.7"
+"@node-rs/bcrypt-darwin-arm64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-darwin-arm64@npm:2.0.0"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-darwin-x64@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-darwin-x64@npm:1.10.7"
+"@node-rs/bcrypt-darwin-x64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-darwin-x64@npm:2.0.0"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-freebsd-x64@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-freebsd-x64@npm:1.10.7"
+"@node-rs/bcrypt-freebsd-x64@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-freebsd-x64@npm:2.0.0"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-linux-arm-gnueabihf@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-linux-arm-gnueabihf@npm:1.10.7"
+"@node-rs/bcrypt-linux-arm-gnueabihf@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-linux-arm-gnueabihf@npm:2.0.0"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-linux-arm64-gnu@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-linux-arm64-gnu@npm:1.10.7"
+"@node-rs/bcrypt-linux-arm64-gnu@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-linux-arm64-gnu@npm:2.0.0"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-linux-arm64-musl@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-linux-arm64-musl@npm:1.10.7"
+"@node-rs/bcrypt-linux-arm64-musl@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-linux-arm64-musl@npm:2.0.0"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-linux-x64-gnu@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-linux-x64-gnu@npm:1.10.7"
+"@node-rs/bcrypt-linux-x64-gnu@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-linux-x64-gnu@npm:2.0.0"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-linux-x64-musl@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-linux-x64-musl@npm:1.10.7"
+"@node-rs/bcrypt-linux-x64-musl@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-linux-x64-musl@npm:2.0.0"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-wasm32-wasi@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-wasm32-wasi@npm:1.10.7"
-  dependencies:
-    "@napi-rs/wasm-runtime": "npm:^0.2.5"
-  conditions: cpu=wasm32
-  languageName: node
-  linkType: hard
-
-"@node-rs/bcrypt-win32-arm64-msvc@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-win32-arm64-msvc@npm:1.10.7"
+"@node-rs/bcrypt-win32-arm64-msvc@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-win32-arm64-msvc@npm:2.0.0"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-win32-ia32-msvc@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-win32-ia32-msvc@npm:1.10.7"
+"@node-rs/bcrypt-win32-ia32-msvc@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-win32-ia32-msvc@npm:2.0.0"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt-win32-x64-msvc@npm:1.10.7":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt-win32-x64-msvc@npm:1.10.7"
+"@node-rs/bcrypt-win32-x64-msvc@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt-win32-x64-msvc@npm:2.0.0"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@node-rs/bcrypt@npm:^1.10.4":
-  version: 1.10.7
-  resolution: "@node-rs/bcrypt@npm:1.10.7"
+"@node-rs/bcrypt@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@node-rs/bcrypt@npm:2.0.0"
   dependencies:
-    "@node-rs/bcrypt-android-arm-eabi": "npm:1.10.7"
-    "@node-rs/bcrypt-android-arm64": "npm:1.10.7"
-    "@node-rs/bcrypt-darwin-arm64": "npm:1.10.7"
-    "@node-rs/bcrypt-darwin-x64": "npm:1.10.7"
-    "@node-rs/bcrypt-freebsd-x64": "npm:1.10.7"
-    "@node-rs/bcrypt-linux-arm-gnueabihf": "npm:1.10.7"
-    "@node-rs/bcrypt-linux-arm64-gnu": "npm:1.10.7"
-    "@node-rs/bcrypt-linux-arm64-musl": "npm:1.10.7"
-    "@node-rs/bcrypt-linux-x64-gnu": "npm:1.10.7"
-    "@node-rs/bcrypt-linux-x64-musl": "npm:1.10.7"
-    "@node-rs/bcrypt-wasm32-wasi": "npm:1.10.7"
-    "@node-rs/bcrypt-win32-arm64-msvc": "npm:1.10.7"
-    "@node-rs/bcrypt-win32-ia32-msvc": "npm:1.10.7"
-    "@node-rs/bcrypt-win32-x64-msvc": "npm:1.10.7"
+    "@node-rs/bcrypt-android-arm-eabi": "npm:2.0.0"
+    "@node-rs/bcrypt-android-arm64": "npm:2.0.0"
+    "@node-rs/bcrypt-darwin-arm64": "npm:2.0.0"
+    "@node-rs/bcrypt-darwin-x64": "npm:2.0.0"
+    "@node-rs/bcrypt-freebsd-x64": "npm:2.0.0"
+    "@node-rs/bcrypt-linux-arm-gnueabihf": "npm:2.0.0"
+    "@node-rs/bcrypt-linux-arm64-gnu": "npm:2.0.0"
+    "@node-rs/bcrypt-linux-arm64-musl": "npm:2.0.0"
+    "@node-rs/bcrypt-linux-x64-gnu": "npm:2.0.0"
+    "@node-rs/bcrypt-linux-x64-musl": "npm:2.0.0"
+    "@node-rs/bcrypt-win32-arm64-msvc": "npm:2.0.0"
+    "@node-rs/bcrypt-win32-ia32-msvc": "npm:2.0.0"
+    "@node-rs/bcrypt-win32-x64-msvc": "npm:2.0.0"
   dependenciesMeta:
     "@node-rs/bcrypt-android-arm-eabi":
       optional: true
@@ -1199,15 +1189,13 @@ __metadata:
       optional: true
     "@node-rs/bcrypt-linux-x64-musl":
       optional: true
-    "@node-rs/bcrypt-wasm32-wasi":
-      optional: true
     "@node-rs/bcrypt-win32-arm64-msvc":
       optional: true
     "@node-rs/bcrypt-win32-ia32-msvc":
       optional: true
     "@node-rs/bcrypt-win32-x64-msvc":
       optional: true
-  checksum: 10c0/1718d36fed02936631faf727440318cde4f5b12efc9be44c1aa31316f30a392c39c1bb6578c8ce8c5642877785da7fda980149024291026523e8b29700e57b9b
+  checksum: 10c0/9c90ab326cd64839e607e165fffbb7dd4af73db7a8db11e94e5feaaf1e0a3058c96fb7916dc1607c27f05c49b1d73733a962ea879839849888fe261288088c54
   languageName: node
   linkType: hard
 
@@ -4030,7 +4018,7 @@ __metadata:
     "@codemirror/view": "npm:^6.26.3"
     "@napi-rs/wasm-runtime": "npm:^1.0.0"
     "@node-rs/argon2": "npm:^2.0.0"
-    "@node-rs/bcrypt": "npm:^1.10.4"
+    "@node-rs/bcrypt": "npm:^2.0.0"
     "@node-rs/crc32": "npm:^1.10.3"
     "@node-rs/jieba": "npm:^2.0.0"
     "@node-rs/jsonwebtoken": "npm:^0.5.6"
